@@ -1,0 +1,521 @@
+:root {
+  /* ==========================================================================
+   * 调色板（基础色）
+   * ========================================================================== */
+  --mc-theme-1: #15335f;
+  --mc-theme-2: #1f427a;
+  --mc-theme-3: #0f2444;
+  --mc-theme-soft-08: rgba(21, 51, 95, 0.08);
+  --mc-theme-soft-16: rgba(21, 51, 95, 0.16);
+  --mc-theme-soft-25: rgba(21, 51, 95, 0.25);
+
+  --mc-sub-1: #ff6900;
+  --mc-sub-2: #ff8a33;
+  --mc-sub-soft-08: rgba(255, 105, 0, 0.08);
+  --mc-sub-soft-16: rgba(255, 105, 0, 0.16);
+  --mc-sub-soft-25: rgba(255, 105, 0, 0.25);
+
+  /* ==========================================================================
+   * VitePress 主题变量（全局，包含非首页）
+   * - 明亮模式：统一用主题色（蓝）
+   * - 暗黑模式：统一用副主题色（橙）
+   *
+   * VitePress 内部主要使用 `--vp-c-brand-*` + `--vp-c-accent-*`。
+   * 这里把 brand / accent 都映射到同一套颜色体系，保证站点一致性。
+   * ========================================================================== */
+  --vp-header-anchor-symbol: "";
+
+  --vp-c-brand-1: var(--mc-theme-1);
+  --vp-c-brand-2: var(--mc-theme-2);
+  --vp-c-brand-3: var(--mc-theme-3);
+  --vp-c-brand-soft: var(--mc-theme-soft-16);
+
+  --vp-c-accent-1: var(--mc-theme-1);
+  --vp-c-accent-2: var(--mc-theme-2);
+  --vp-c-accent-soft: var(--mc-theme-soft-16);
+  --vp-c-accent-border: rgba(21, 51, 95, 0.35);
+
+  /* 供开关/滑块轨道使用（例如外观切换） */
+  --vp-input-switch-bg-color: var(--vp-c-accent-soft);
+
+  /* 字体 */
+  --vp-font-family-base: "Inter var experimental", "Inter var", Inter, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  --vp-font-family-heading: var(--vp-font-family-base);
+
+  /* 首页 Hero 视觉变量 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    var(--mc-theme-1) 0%,
+    var(--mc-theme-1) 45%,
+    var(--mc-sub-1) 100%
+  );
+  --vp-home-hero-image-background-image: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(255, 105, 0, 0.25) 0%,
+    rgba(21, 51, 95, 0.25) 45%,
+    rgba(21, 51, 95, 0) 80%
+  );
+  --vp-home-hero-image-filter: blur(0);
+}
+
+/* ==========================================================================
+ * 暗黑模式：全局切换为副主题色（橙）
+ * ========================================================================== */
+.dark {
+  --vp-c-brand-1: var(--mc-sub-1);
+  --vp-c-brand-2: var(--mc-sub-2);
+  --vp-c-brand-3: var(--mc-sub-2);
+  --vp-c-brand-soft: var(--mc-sub-soft-16);
+
+  --vp-c-accent-1: var(--mc-sub-1);
+  --vp-c-accent-2: var(--mc-sub-2);
+  --vp-c-accent-soft: var(--mc-sub-soft-16);
+  --vp-c-accent-border: rgba(255, 105, 0, 0.42);
+
+  --vp-input-switch-bg-color: var(--vp-c-accent-soft);
+
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    var(--mc-sub-1) 0%,
+    var(--mc-sub-1) 45%,
+    var(--mc-theme-1) 100%
+  );
+  --vp-home-hero-image-background-image: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(21, 51, 95, 0.28) 0%,
+    rgba(255, 105, 0, 0.22) 45%,
+    rgba(255, 105, 0, 0) 80%
+  );
+}
+
+/* ==========================================================================
+ * 首页：保持“主题色 + 副主题色”混搭（不随全局策略完全一致）
+ * ========================================================================== */
+.VPContent.is-home {
+  --vp-c-brand-1: var(--mc-theme-1);
+  --vp-c-brand-2: var(--mc-theme-2);
+  --vp-c-brand-3: var(--mc-theme-3);
+  --vp-c-brand-soft: var(--mc-theme-soft-16);
+
+  --vp-c-accent-1: var(--mc-sub-1);
+  --vp-c-accent-2: var(--mc-sub-2);
+  --vp-c-accent-soft: var(--mc-sub-soft-16);
+  --vp-c-accent-border: rgba(255, 105, 0, 0.35);
+
+  --vp-input-switch-bg-color: var(--vp-c-accent-soft);
+}
+
+.dark .VPContent.is-home {
+  /* 暗黑-首页：brand=橙，accent=蓝 */
+  --vp-c-brand-1: var(--mc-sub-1);
+  --vp-c-brand-2: var(--mc-sub-2);
+  --vp-c-brand-3: var(--mc-sub-2);
+  --vp-c-brand-soft: var(--mc-sub-soft-16);
+
+  --vp-c-accent-1: var(--mc-theme-1);
+  --vp-c-accent-2: var(--mc-theme-2);
+  --vp-c-accent-soft: var(--mc-theme-soft-16);
+  --vp-c-accent-border: rgba(21, 51, 95, 0.42);
+
+  --vp-input-switch-bg-color: var(--vp-c-accent-soft);
+}
+
+.dark .VPHome .text {
+  color: var(--vp-c-brand-1);
+}
+
+.dark .VPHome .tagline {
+  color: rgba(255, 105, 0, 0.8);
+}
+
+/* ==========================================================================
+ * 字体：中文字体栈
+ * ========================================================================== */
+::lang(zh) {
+  --vp-font-family-base: Quotes, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --vp-font-family-heading: var(--vp-font-family-base);
+}
+
+/* ==========================================================================
+ * 全局背景（站点渐变）
+ * ========================================================================== */
+body {
+  background-image: radial-gradient(
+      1200px 500px at 10% 0%,
+      rgba(255, 105, 0, 0.08) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      1200px 500px at 90% 10%,
+      rgba(21, 51, 95, 0.12) 0%,
+      transparent 70%
+    );
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+ * 工具类
+ * ========================================================================== */
+.mc-img-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mc-img-row > img {
+  flex: 1 1 0;
+  min-width: 0;
+  height: auto;
+  border-radius: 10px;
+}
+img{
+  margin: 20px auto;
+  cursor: pointer;
+}
+/* ==========================================================================
+ * <960px（移动端/窄屏）行为
+ * 说明：为“只使用 min-width”，这里用 `not all and (min-width: 960px)` 表达 <960px
+ * ========================================================================== */
+@media (max-width: 960px) {
+  /* Mobile nav screen (opened by hamburger): only apply when screen is open */
+  .VPNavBar.screen-open + #VPNavScreen {
+    display: block !important;
+    position: fixed !important;
+    top: calc(var(--vp-nav-height, 64px) + var(--vp-layout-top-height, 0px)) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: calc(100vh - var(--vp-nav-height, 64px) - var(--vp-layout-top-height, 0px)) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9999 !important;
+    background-color: var(--vp-nav-screen-bg-color) !important;
+    pointer-events: auto !important;
+  }
+
+  /* <960px：顶部导航栏隐藏下载按钮（但在汉堡菜单里保留） */
+  .VPNavBar .mc-export {
+    display: none !important;
+  }
+}
+/* ==========================================================================
+ * 打印 / PDF（仅浏览器打印；站点的“导出 PDF”会在脚本里注入专用 CSS）
+ * ========================================================================== */
+@media print {
+  .VPNav,
+  .VPNavBar,
+  .VPSidebar,
+  .VPLocalNav,
+  .VPFooter,
+  .VPDocAside,
+  .VPDocFooter,
+  .VPBackdrop {
+    display: none !important;
+  }
+
+  .VPContent {
+    padding-top: 0 !important;
+  }
+
+  .vp-doc {
+    max-width: none !important;
+  }
+}
+
+/* ==========================================================================
+ * 顶部导航 / 布局细节
+ * ========================================================================== */
+.VPNavBarTitle .title {
+  font-family: var(--vp-font-family-heading);
+  letter-spacing: 0.2px;
+}
+.VPSwitch{
+  margin-right: 12px;
+}
+/* 视觉上“遮住”页面滚动条顶部区域，避免顶部出现颜色不一致的条带 */
+.VPNav::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: var(--vp-nav-height);
+  width: 12px;
+  /*
+   * 说明：
+   * `--vp-nav-bg-color` 通常是纯色，但首页 Hero 区域顶部栏常为透明叠在渐变背景上，
+   * 这里如果强行填充颜色可能会出现“白条/色差”。保持透明即可。
+   */
+  background: transparent;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+ * 首页 Hero 视觉细节
+ * ========================================================================== */
+.VPHomeHero {
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHomeHero .name {
+  max-width: 100% !important;
+  line-height: 1.4 !important;
+}
+
+.VPHomeHero .name .clip {
+  white-space: normal;
+}
+
+.VPHomeHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(21, 51, 95, 0.15) 0%,
+    rgba(255, 105, 0, 0.08) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.VPHome .image-bg {
+  opacity: 0.8;
+}
+
+.VPHome .text,
+.VPHome .name {
+  font-family: var(--vp-font-family-heading);
+}
+
+.VPHome .text {
+  letter-spacing: 0.3px;
+}
+
+.VPHome .tagline {
+  max-width: 560px;
+  color: rgba(21, 51, 95, 0.78);
+}
+
+/* ==========================================================================
+ * 按钮 / 卡片
+ * ========================================================================== */
+.VPButton.brand {
+  background: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.VPButton.alt {
+  border-color: var(--vp-c-accent-border);
+  color: var(--vp-c-brand-1);
+}
+
+.VPHomeFeatures .VPHomeFeature {
+  border: 1px solid rgba(21, 51, 95, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(15, 36, 68, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.VPHomeFeatures .VPHomeFeature .title {
+  font-family: var(--vp-font-family-heading);
+}
+
+.VPHome .VPHomeFeatures {
+  margin-top: 48px;
+}
+
+/* ==========================================================================
+ * 文档正文样式
+ * ========================================================================== */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-family: var(--vp-font-family-heading);
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-accent-1);
+}
+
+.vp-doc .custom-block.tip {
+  border-color: var(--vp-c-accent-border);
+  background: var(--vp-c-accent-soft);
+}
+
+/* 选中文字样式（全局 + 首页覆盖） */
+::selection {
+  background: var(--vp-c-accent-soft);
+  color: var(--vp-c-accent-1);
+}
+
+.VPContent.is-home ::selection {
+  background: var(--mc-theme-soft-25);
+  color: var(--mc-theme-1);
+}
+
+.dark .VPContent.is-home ::selection {
+  background: var(--mc-sub-soft-25);
+  color: var(--mc-sub-1);
+}
+
+/* ==========================================================================
+ * 激活态（顶部导航 / 侧边栏）
+ * ========================================================================== */
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink.active .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  font-size: 1.04em;
+}
+
+.VPSidebarItem.is-active > .item > .text,
+.VPSidebarItem.is-active > .item > .text .title {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+ * 滚动条
+ * ========================================================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-accent-2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--vp-c-brand-1) 0%,
+    var(--vp-c-brand-2) 60%,
+    var(--vp-c-accent-1) 100%
+  );
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* ==========================================================================
+ * 桌面端（>=960px）布局调整
+ * ========================================================================== */
+@media (min-width: 960px) {
+  /* 非首页：顶部栏背景与侧边栏背景一致 */
+  .VPNavBar:not(.home) {
+    background-color: var(--vp-sidebar-bg-color) !important;
+  }
+
+  .VPNavBar:not(.home) .VPNavBarTitle .title {
+    background-color: var(--vp-sidebar-bg-color) !important;
+  }
+
+  /* 侧边栏从顶部栏下方开始滚动 */
+  .VPSidebar {
+    top: var(--vp-nav-height) !important;
+    height: calc(100vh - var(--vp-nav-height));
+    padding-top: 0 !important;
+    padding-bottom: 32px !important;
+  }
+
+  .VPSidebar .curtain {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+ * 用户手册页面样式
+ * ========================================================================== */
+
+/* h 系列字体大小调整：确保都大于正文字体，且层级差距缩小 */
+.vp-doc h1 {
+  font-size: 1.6em; /* 约 24px (基于 15px 基准) */
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.vp-doc h2 {
+  font-size: 1.4em; /* 约 21px */
+  font-weight: 600;
+  margin-top: 1.75em;
+  margin-bottom: 0.875em;
+}
+
+.vp-doc h3 {
+  font-size: 1.25em; /* 约 18.75px */
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.vp-doc h4 {
+  font-size: 1.1em; /* 约 16.5px */
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 0.625em;
+}
+
+.vp-doc h5 {
+  font-size: 1.05em; /* 约 15.75px */
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.vp-doc h6 {
+  font-size: 1.02em; /* 约 15.3px */
+  font-weight: 600;
+  margin-top: 0.875em;
+  margin-bottom: 0.5em;
+}
+
+/* 英文手册页面字体样式 */
+/* 英文手册：标题使用 Montserrat，正文使用 Arimo */
+.vp-doc.en-manual h1,
+.vp-doc.en-manual h2,
+.vp-doc.en-manual h3,
+.vp-doc.en-manual h4,
+.vp-doc.en-manual h5,
+.vp-doc.en-manual h6 {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.vp-doc.en-manual {
+  font-family: "Arimo", Arial, sans-serif;
+}
+
+/* 中文手册页面字体样式 */
+/* 中文手册：标题和正文统一使用 MiSans */
+.vp-doc.cn-manual h1,
+.vp-doc.cn-manual h2,
+.vp-doc.cn-manual h3,
+.vp-doc.cn-manual h4,
+.vp-doc.cn-manual h5,
+.vp-doc.cn-manual h6,
+.vp-doc.cn-manual {
+  font-family: "MiSans", "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+ 

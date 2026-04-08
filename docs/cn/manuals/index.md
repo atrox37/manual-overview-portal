@@ -1,31 +1,18 @@
 # 当前线上手册
 
-这个门户把现有生产环境手册统一聚合到一个入口页，便于用户按产品或场景快速跳转到对应站点。
+这个目录页用于汇总当前已经接入统一文档平台的手册站点。适合在你已经明确手册类别时，直接快速进入对应文档。
 
-## 手册站点
+## 手册矩阵
 
-### Edge EMS 用户手册
-
-- 英文版：https://d1hmpn6jeubr8i.cloudfront.net/
-- 中文版：https://d1hmpn6jeubr8i.cloudfront.net/cn/
-
-### 一体化托盘安装手册
-
-- 英文版：https://dfmd09pg308q8.cloudfront.net/
-- 中文版：https://dfmd09pg308q8.cloudfront.net/cn/
-
-### 折叠支架安装手册
-
-- 英文版：https://d3aq17bkm94m8b.cloudfront.net/
-- 中文版：https://d3aq17bkm94m8b.cloudfront.net/cn/
-
-### 现场作业指导手册
-
-- 英文版：https://dlvz7nx894kea.cloudfront.net/
-- 中文版：https://dlvz7nx894kea.cloudfront.net/cn/
+| 手册 | 主要用途 | 英文版 | 中文版 |
+| --- | --- | --- | --- |
+| Edge EMS 用户手册 | 产品操作、参数配置、日常维护 | [打开](/edge-ems/) | [打开](/edge-ems/cn/) |
+| 一体化托盘安装手册 | 一体化托盘安装与执行说明 | [打开](/integrated-tray/) | [打开](/integrated-tray/cn/) |
+| 折叠支架安装手册 | 折叠支架装配与安装流程 | [打开](/foldable-racking/) | [打开](/foldable-racking/cn/) |
+| 现场作业指导手册 | 现场标准作业与执行流程说明 | [打开](/field-work/) | [打开](/field-work/cn/) |
 
 ## 说明
 
-- 每个站点默认打开英文版。
-- 中文版统一通过在同一站点地址后追加 `/cn/` 访问。
-- 这个总览门户适合作为现有 CloudFront 文档站之前的统一入口页。
+- 站点根路径默认进入英文版。
+- 中文版统一放在对应手册路径下的 `/cn/` 页面。
+- 总览平台负责统一入口，每个子手册站点仍然保持各自独立的内容结构与导航体系。

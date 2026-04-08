@@ -1,31 +1,18 @@
 # Current Online Manuals
 
-This portal groups the current production manuals into a single entry page. Use the links below to jump directly to each live site.
+This directory page groups the manuals that are currently exposed through the unified documentation platform. Use it when you already know the manual category and want the fastest route into the correct site.
 
-## Manual Sites
+## Manual Matrix
 
-### Edge EMS User Manual
-
-- English: https://d1hmpn6jeubr8i.cloudfront.net/
-- Chinese: https://d1hmpn6jeubr8i.cloudfront.net/cn/
-
-### Integrated Tray Installation Manual
-
-- English: https://dfmd09pg308q8.cloudfront.net/
-- Chinese: https://dfmd09pg308q8.cloudfront.net/cn/
-
-### Foldable Racking Installation Manual
-
-- English: https://d3aq17bkm94m8b.cloudfront.net/
-- Chinese: https://d3aq17bkm94m8b.cloudfront.net/cn/
-
-### Field Work Instruction Manual
-
-- English: https://dlvz7nx894kea.cloudfront.net/
-- Chinese: https://dlvz7nx894kea.cloudfront.net/cn/
+| Manual | Primary Use | English | Chinese |
+| --- | --- | --- | --- |
+| Edge EMS User Manual | Product operation, configuration, maintenance | [Open](/edge-ems/) | [打开](/edge-ems/cn/) |
+| Integrated Tray Installation Manual | Integrated tray installation and execution | [Open](/integrated-tray/) | [打开](/integrated-tray/cn/) |
+| Foldable Racking Installation Manual | Foldable racking assembly and installation | [Open](/foldable-racking/) | [打开](/foldable-racking/cn/) |
+| Field Work Instruction Manual | On-site standard work and execution process | [Open](/field-work/) | [打开](/field-work/cn/) |
 
 ## Notes
 
-- English is the default language for every manual site.
-- The Chinese version is available by appending `/cn/` to the same site URL.
-- This overview portal is intended to be the shared landing page in front of the existing CloudFront-hosted documentation.
+- English is the default language at the site root.
+- The Chinese version is available under the same manual path with `/cn/`.
+- The overview portal remains the shared landing page, while each manual site keeps its own content structure and navigation.

@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
-  <title>Documentation Portal</title>
-  <desc>Simple square mark for the documentation portal.</desc>
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#15335f" />
-      <stop offset="100%" stop-color="#ff6900" />
-    </linearGradient>
-  </defs>
-  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#g)" />
-  <path d="M38 34h35c11 0 20 9 20 20s-9 20-20 20H54v20H38V34zm16 14v12h18c3 0 5-3 5-6s-2-6-5-6H54z" fill="#fff"/>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="28" fill="#15335F"/>
+  <path d="M32 72C42 52 58 44 88 44" stroke="#FF6900" stroke-width="10" stroke-linecap="round"/>
+  <path d="M32 44H68C77 44 84 51 84 60V88" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="84" cy="88" r="8" fill="#FF6900"/>
 </svg>

@@ -1,15 +1,15 @@
 import { defineConfig } from "vitepress";
 
-const overviewLinks = {
+const manualLinks = {
   edgeEms: {
     en: "/edge-ems/",
     zh: "/edge-ems/cn/",
   },
-  trayInstall: {
+  integratedTray: {
     en: "/integrated-tray/",
     zh: "/integrated-tray/cn/",
   },
-  foldingRack: {
+  foldableRacking: {
     en: "/foldable-racking/",
     zh: "/foldable-racking/cn/",
   },
@@ -22,6 +22,12 @@ const overviewLinks = {
 export default defineConfig({
   base: "/",
   cleanUrls: false,
+  ignoreDeadLinks: [
+    /^\/edge-ems(?:\/|$)/,
+    /^\/integrated-tray(?:\/|$)/,
+    /^\/foldable-racking(?:\/|$)/,
+    /^\/field-work(?:\/|$)/,
+  ],
   vite: {
     build: {
       assetsInlineLimit: 0,
@@ -88,6 +94,10 @@ export default defineConfig({
         siteTitle: "Manual Overview Platform",
         nav: [
           {
+            text: "Overview",
+            link: "/",
+          },
+          {
             text: "Manual Sites",
             link: "/manuals/index.html",
             activeMatch: "^/manuals/",
@@ -100,10 +110,16 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: "Overview", link: "/manuals/index.html" },
-                { text: "Edge EMS User Manual", link: overviewLinks.edgeEms.en },
-                { text: "Integrated Tray Installation Manual", link: overviewLinks.trayInstall.en },
-                { text: "Foldable Racking Installation Manual", link: overviewLinks.foldingRack.en },
-                { text: "Field Work Instruction Manual", link: overviewLinks.fieldWork.en },
+                { text: "Edge EMS User Manual", link: manualLinks.edgeEms.en },
+                {
+                  text: "Integrated Tray Installation Manual",
+                  link: manualLinks.integratedTray.en,
+                },
+                {
+                  text: "Foldable Racking Installation Manual",
+                  link: manualLinks.foldableRacking.en,
+                },
+                { text: "Field Work Instruction Manual", link: manualLinks.fieldWork.en },
               ],
             },
           ],
@@ -124,6 +140,10 @@ export default defineConfig({
         },
         nav: [
           {
+            text: "总览",
+            link: "/cn/",
+          },
+          {
             text: "手册站点",
             link: "/cn/manuals/index.html",
             activeMatch: "^/cn/manuals/",
@@ -136,10 +156,16 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: "总览", link: "/cn/manuals/index.html" },
-                { text: "Edge EMS 用户手册", link: overviewLinks.edgeEms.zh },
-                { text: "一体化托盘安装手册", link: overviewLinks.trayInstall.zh },
-                { text: "折叠支架安装手册", link: overviewLinks.foldingRack.zh },
-                { text: "现场作业指导手册", link: overviewLinks.fieldWork.zh },
+                { text: "Edge EMS 用户手册", link: manualLinks.edgeEms.zh },
+                {
+                  text: "一体化托盘安装手册",
+                  link: manualLinks.integratedTray.zh,
+                },
+                {
+                  text: "折叠支架安装手册",
+                  link: manualLinks.foldableRacking.zh,
+                },
+                { text: "现场作业指导手册", link: manualLinks.fieldWork.zh },
               ],
             },
           ],

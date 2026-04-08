@@ -2,62 +2,25 @@
 layout: home
 
 hero:
-  name: "手册总览平台"
-  tagline: "面向当前生产环境手册的统一双语入口，覆盖 Edge EMS、安装作业与现场执行场景。"
-  actions:
-    - theme: brand
-      text: 查看手册目录
-      link: /cn/manuals/index.html
-    - theme: alt
-      text: 进入 Edge EMS
-      link: /edge-ems/cn/
+  name: "线上手册总览平台"
+  tagline: "本平台用于统一汇聚当前在线手册，支持用户按业务场景快速定位并进入对应说明文档。"
+  actions: []
 
 features:
-  - title: 统一入口
-    details: 所有当前在用手册都从一个页面进入，减少查找时间，也避免在多个旧地址之间来回切换。
-  - title: 中英双语
-    details: 每个站点默认进入英文版，对应中文内容统一放在相同路径下的 /cn/ 页面。
-  - title: 四类手册整合
-    details: 当前已整合 Edge EMS 用户手册、一体化托盘安装手册、折叠支架安装手册与现场作业指导手册。
+  - title: Edge EMS 用户手册
+    details: "适用于平台使用、参数配置、系统操作与日常维护场景。"
+    link: https://d22e8mefr1nvgp.cloudfront.net/edge-ems/cn/
+    linkText: 打开中文站点
+  - title: 一体化托盘安装手册
+    details: "适用于一体化托盘方案的安装说明、执行步骤与现场参考。"
+    link: https://d22e8mefr1nvgp.cloudfront.net/integrated-tray/cn/
+    linkText: 打开中文站点
+  - title: 折叠支架安装手册
+    details: "适用于折叠支架系统的安装流程、装配步骤与实施操作。"
+    link: https://d22e8mefr1nvgp.cloudfront.net/foldable-racking/cn/
+    linkText: 打开中文站点
+  - title: 现场作业指导手册
+    details: "适用于现场标准作业、执行流程对齐与工序说明场景。"
+    link: https://d22e8mefr1nvgp.cloudfront.net/field-work/cn/
+    linkText: 打开中文站点
 ---
-
-## 平台定位
-
-这个总览站点用于整合当前线上手册入口，让使用者可以按产品线或作业场景快速进入正确的文档站点。它不替代子手册本身，而是作为统一入口和导航层。
-
-## 当前手册站点
-
-### Edge EMS 用户手册
-
-适用于平台使用、参数配置、系统操作与日常维护场景。
-
-- 英文版：[打开 Edge EMS 手册](/edge-ems/)
-- 中文版：[打开中文站点](/edge-ems/cn/)
-
-### 一体化托盘安装手册
-
-适用于一体化托盘方案的安装说明、执行步骤与现场参考。
-
-- 英文版：[打开一体化托盘手册](/integrated-tray/)
-- 中文版：[打开中文站点](/integrated-tray/cn/)
-
-### 折叠支架安装手册
-
-适用于折叠支架系统的安装流程、装配步骤与实施操作。
-
-- 英文版：[打开折叠支架手册](/foldable-racking/)
-- 中文版：[打开中文站点](/foldable-racking/cn/)
-
-### 现场作业指导手册
-
-适用于现场标准作业、执行流程对齐与工序说明场景。
-
-- 英文版：[打开现场作业指导手册](/field-work/)
-- 中文版：[打开中文站点](/field-work/cn/)
-
-## 使用方式
-
-1. 从总览页进入当前文档平台。
-2. 根据产品或作业场景选择对应子手册。
-3. 如需中文内容，进入对应站点的 `/cn/` 页面。
-4. 进入子手册后，直接在该手册站点内继续检索和阅读。
